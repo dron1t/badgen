@@ -16,12 +16,10 @@ do
     lines=""
 
     # Losowanie i dodawanie linii
-    for j in $(seq 1 $i)
-    do
-        # Losowanie jednej linii i dodanie do zmiennej
-        line=$(shuf -n 1 "$TEXT_FILE")
-        lines+="$line "
-    done
+   
+    line=$(shuf -n $i "$TEXT_FILE" | tr '\n' ' ' | head --bytes 6500)
+    lines+="$line"
+    
 
     # Zapisanie linii do pliku CSV
     echo "MT700, $lines" >> "$CSV_FILE"
