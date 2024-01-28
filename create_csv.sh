@@ -4,7 +4,7 @@
 TEXT_FILE="slowa.txt"
 
 # Ścieżka do pliku CSV, który zostanie utworzony
-CSV_FILE="output.csv"
+CSV_FILE="output2.csv"
 
 # Tworzenie pustego pliku CSV, jeśli nie istnieje
 > "$CSV_FILE"
@@ -22,5 +22,5 @@ do
     
 
     # Zapisanie linii do pliku CSV
-    echo "MT700, $lines" >> "$CSV_FILE"
+    echo "MT700,MT700_$i, $lines" >> "$CSV_FILE"
 done
